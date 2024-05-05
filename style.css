@@ -1,0 +1,166 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-VariableFont_wght.ttf");
+}
+
+:root {
+  --color-primary: hsl(47, 88%, 63%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-grey: hsl(0, 0%, 50%);
+  --color-neutral-black: hsl(0, 0%, 7%);
+
+  --fw-bold: 800;
+
+  font-family: "Figtree";
+  font-size: 16px;
+}
+
+p {
+  color: var(--color-neutral-black);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 2em;
+  background-color: var(--color-primary);
+}
+
+main {
+  display: grid;
+  gap: 1em;
+  max-width: 350px;
+  padding: 1.5em;
+  margin-bottom: 1em;
+  border: 1px solid var(--color-neutral-black);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--color-neutral-black);
+  background-color: var(--color-neutral-white);
+}
+
+main > header {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+main > header > img {
+  width: 100%;
+}
+
+main > section {
+  display: grid;
+  gap: 0.7em;
+}
+
+main > section > p:not(.badge) {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+main > h1 {
+  font-size: 1.35rem;
+  font-weight: var(--fw-bold);
+}
+main > h1 > a {
+  text-decoration: none;
+  color: var(--color-neutral-black);
+}
+main > h1 > a:hover {
+  color: var(--color-primary);
+}
+
+main > p {
+  color: var(--color-neutral-grey);
+  font-size: 0.9rem;
+}
+
+main > footer {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+main > footer > img {
+  width: 10%;
+}
+
+main > footer > p {
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+}
+
+.badge {
+  box-sizing: border-box;
+  max-width: min-content;
+  padding: 0.2em 0.8em;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+}
